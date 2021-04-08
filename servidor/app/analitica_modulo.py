@@ -55,8 +55,12 @@ class analitica():
         new_data = {"fecha": date_time, "sensor": msj_vetor[10], "valor": float(msj_vetor[11])}
         self.df = self.df.append(new_data, ignore_index=True)
 
-
-
+        self.publicar("EjeX",msj_vetor[1])
+        self.publicar("EjeY",msj_vetor[3])
+        self.publicar("EjeZ",msj_vetor[5])
+        self.publicar("temp_data",msj_vetor[7])
+        self.publicar("pres_data",msj_vetor[9])
+        self.publicar("humd_data",msj_vetor[11])
      
         self.analitica_descriptiva()
         self.analitica_predictiva()
